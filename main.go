@@ -1,9 +1,9 @@
 /*
 Learning Golang
-
 Just Kalkulator Sederhana bjir
 
 
+Aku Mah Masih Pemula T.T
 */
 
 package main
@@ -40,7 +40,55 @@ func main() {
 
     // Jika Memilih bukan 0 - 4 Maka Invalid 
     if choice < "0" || choice > "4" {
+      fmt.println("Opsi Tidak Valid!")
+      continue
+      }
 
+    // Input Ke-1 Bjir
+    fmt.Println("Input Angka Ke-1: ")
+    scanner.Scan()
+    num1Str := scanner.Text()
+    num1, err := strconv.ParseFloat(num1Str, 64)
+    if err != nil {
+     fmt.Println("Masukin angka jir lah")
+      continue
+    }
 
+    // Input Ke-2
+    fmt.Println("Input Angka Ke-1: ")
+    scanner.Scan()
+    num2Str := scanner.Text()
+    num2, err := strconv.ParseFloat(num2Str, 64)
+    if err != nil {
+     fmt.Println("Masukin angka jir lah")
+      continue
+    }
+
+    // Operasi Melalui pilihan dengan float & strings
+    var result float64
+    var operator string
+
+    switch choice {
+    case "1":
+      result = num1 + num2
+      operator = "+"
+    case "2":
+      result = num1 - num2
+      operator = "-"
+    case "3":
+      result = num1 * num2
+      operator = "*"
+    case "4":
+    if num2 == 0 {
+      fmt.Println("Tidak bisa membagi noll")
+      continue
+      }
+    reult = num1 / num2
+      operator = "/"
+      }
+
+// Test Ombak jir
+    fmt.Println("\nHasi: %.2f %s %.2f = %.2f\n", num1, operator, num2, result)
     
   }
+}
