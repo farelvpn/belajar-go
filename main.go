@@ -8,13 +8,13 @@ Aku Mah Masih Pemula T.T
 
 package main
 
-import {
+import (
   "bufio"
   "fmt"
   "os"
   "strconv"
-  "strings"
-}
+//  "strings"
+)
 
 func main() {
  scanner := bufio.NewScanner(os.Stdin)
@@ -40,7 +40,7 @@ func main() {
 
     // Jika Memilih bukan 0 - 4 Maka Invalid 
     if choice < "0" || choice > "4" {
-      fmt.println("Opsi Tidak Valid!")
+      fmt.Println("Opsi Tidak Valid!")
       continue
       }
 
@@ -83,12 +83,12 @@ func main() {
       fmt.Println("Tidak bisa membagi noll")
       continue
       }
-    reult = num1 / num2
+    result = num1 / num2
       operator = "/"
       }
 
 // Test Ombak jir
-    fmt.Println("\nHasi: %.2f %s %.2f = %.2f\n", num1, operator, num2, result)
+    fmt.Println("\nHasil: %.2f %s %.2f = %.2f\n", num1, operator, num2, result)
     
   }
 }
